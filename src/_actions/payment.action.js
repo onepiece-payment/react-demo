@@ -25,11 +25,12 @@ export const getAvailablePaymentMethods = () => async (dispatch) => {
 export const submitPayment = (paymentObj, history) => async (dispatch) => {
     try {
         startLoader(dispatch);
+        alert(JSON.stringify(paymentObj))
         const newTransaction = await newMerchant.initPayment(paymentObj);
         if (newTransaction.status === false) {
             throw new Error(newTransaction.message)
         } else {
-            window.location.href=newTransaction.qrcode_url
+            window.location.href = newTransaction.qrcode_url
         }
     } catch (err) {
         alert(err);

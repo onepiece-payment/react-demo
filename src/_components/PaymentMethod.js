@@ -11,6 +11,9 @@ import iconJdpayColor from '../_img/jd_color.png';
 import iconJdpayWhite from '../_img/jd_white.png';
 import iconWechath5White from '../_img/H5_white.png';
 import iconWechath5Color from '../_img/H5_color.png';
+import iconAlipayh5White from '../_img/Alipay_H5_white.png';
+import iconAlipayh5Color from '../_img/Alipay_H5_color.png';
+
 
 import { activePayment } from '../_actions/payment.action';
 
@@ -31,17 +34,23 @@ class PaymentMethod extends Component {
 
     paymentBranding = () => {
         switch (this.state.paymentMethod) {
-            case 'wechatpay':
+            // case 'wechatpay':
+            //     return (
+            //         this.props.paymentBrand === 'wechatpay'
+            //             ? <img className="payment_button_selected" src={iconWechatpayWhite} alt="icon" />
+            //             : <img className="payment_button" src={iconWechatpayColor} alt="icon" />
+            //     );
+            // case 'wechath5':
+            //     return (
+            //         this.props.paymentBrand === 'wechath5'
+            //             ? <img className="payment_button_selected" src={iconWechath5White} alt="icon" />
+            //             : <img className="payment_button" src={iconWechath5Color} alt="icon" />
+            //     );
+            case 'alih5':
                 return (
-                    this.props.paymentBrand === 'wechatpay'
-                        ? <img className="payment_button_selected" src={iconWechatpayWhite} alt="icon" />
-                        : <img className="payment_button" src={iconWechatpayColor} alt="icon" />
-                );
-            case 'wechath5':
-                return (
-                    this.props.paymentBrand === 'wechath5'
-                        ? <img className="payment_button_selected" src={iconWechath5White} alt="icon" />
-                        : <img className="payment_button" src={iconWechath5Color} alt="icon" />
+                    this.props.paymentBrand === 'alih5'
+                        ? <img className="payment_button_selected" src={iconAlipayh5White} alt="icon" />
+                        : <img className="payment_button" src={iconAlipayh5Color} alt="icon" />
                 );
             case 'alipay':
                 return (
@@ -62,7 +71,8 @@ class PaymentMethod extends Component {
                         : <img className="payment_button" src={iconJdpayColor} alt="icon" />
                 );
             default:
-                return (<img className="payment_button" src={iconWechatpayColor} alt="icon" />);
+                return;
+            // return (<img className="payment_button" src={iconWechatpayColor} alt="icon" />);
         }
     }
 

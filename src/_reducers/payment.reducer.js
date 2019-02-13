@@ -1,7 +1,7 @@
 import { userConstants } from '../_constants';
 
 const initialState = {
-    paymentBrand: 'wechatpay',
+    paymentBrand: 'alipay',
     availablePaymentMethods: [],
     paymentInfo: {},
     priceList: [],
